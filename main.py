@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
@@ -6,7 +7,10 @@ from aiogram.types import CallbackQuery
 
 from bot import MainMenu, ProfileScene
 
-API_TOKEN = '7539945722:AAEqqIK0AExrYkFVITNSGpSOaX88Gpt-bM8'
+from dotenv import load_dotenv
+
+load_dotenv()
+API_TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
